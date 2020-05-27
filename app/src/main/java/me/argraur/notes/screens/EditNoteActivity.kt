@@ -81,4 +81,8 @@ class EditNoteActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.color2).setImageDrawable(null)
         findViewById<FloatingActionButton>(R.id.color3).setImageDrawable(null)
     }
+
+    fun back(view: View) {
+        finish()
+    }
 }

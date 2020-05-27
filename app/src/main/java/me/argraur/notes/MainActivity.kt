@@ -65,4 +65,8 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         updateNotes()
     }
+
+    fun back(view: View) {
+        finish()
+    }
 }
