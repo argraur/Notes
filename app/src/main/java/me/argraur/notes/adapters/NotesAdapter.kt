@@ -41,8 +41,7 @@ class NotesAdapter(private val notes: Array<Note>, private val activity: Activit
     class NotesHolder(val cardView: MaterialCardView): RecyclerView.ViewHolder(cardView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesHolder {
-        val cardView = LayoutInflater.from(parent.context).inflate(R.layout.note_card, parent, false) as MaterialCardView
-        return NotesHolder(cardView)
+        return NotesHolder(LayoutInflater.from(parent.context).inflate(R.layout.note_card, parent, false) as MaterialCardView)
     }
 
     override fun onBindViewHolder(holder: NotesHolder, position: Int) {
