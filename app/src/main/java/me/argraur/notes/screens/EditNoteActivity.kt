@@ -22,6 +22,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import me.argraur.notes.R
 import me.argraur.notes.adapters.NOTE_TIME
 import me.argraur.notes.adapters.NOTE_TITLE
@@ -40,8 +41,8 @@ class EditNoteActivity : AppCompatActivity() {
             findViewById<FloatingActionButton>(R.id.saveNote).setOnClickListener {
                 val title = findViewById<TextInputEditText>(R.id.title_input).text.toString()
                 val value = findViewById<TextInputEditText>(R.id.value_input).text.toString()
-                if (title == "" && value == "") {
-                    finish()
+                if (title == "") {
+                    findViewById<TextInputLayout>(R.id.textInputLayout).error = "Title can't be empty!"
                     return@setOnClickListener
                 }
                 NoteHelper(this).putNote(Note(title, value, color!!))
@@ -58,8 +59,8 @@ class EditNoteActivity : AppCompatActivity() {
             findViewById<FloatingActionButton>(R.id.saveNote).setOnClickListener {
                 val title = titleInput.text.toString()
                 val value = valueInput.text.toString()
-                if (title == "" && value == "") {
-                    finish()
+                if (title == "") {
+                    findViewById<TextInputLayout>(R.id.textInputLayout).error = "Title can't be empty!"
                     return@setOnClickListener
                 }
                 noteHelper.deleteNote(time)
