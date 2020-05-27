@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "639981910793",
+    "firebase_url": "https://notes-970b2.firebaseio.com",
+    "project_id": "notes-970b2",
+    "storage_bucket": "notes-970b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639981910793:android:79294c7e23a2956348b1d8",
+        "android_client_info": {
+          "package_name": "me.argraur.notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639981910793-aaoto74g2v86oeiap2plu5nd27k57a05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2JLZqp0GmcLnoh2C0RjPGmSzoZ3T0DXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639981910793-aaoto74g2v86oeiap2plu5nd27k57a05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
