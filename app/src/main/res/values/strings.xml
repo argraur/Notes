@@ -3,6 +3,6 @@
     <string name="nothing">Nothing here yet!</string>
     <string name="title_input">Title</string>
     <string name="value_input">Note</string>
-    <string name="new_note">New Note</string>
-    <string name="edit_note">Edit Note</string>
+    <string name="new_note">New note</string>
+    <string name="edit_note">Edit note</string>
 </resources>
