@@ -66,25 +66,32 @@ class NoteManager(context: Context): Subject {
 
     private fun getNotes() {
         val db = dbHelper.readableDatabase
-        val projection = arrayOf(BaseColumns._ID, Note.Companion.Entry.COLUMN_NAME_TITLE, Note.Companion.Entry.COLUMN_NAME_VALUE, Note.Companion.Entry.COLUMN_NAME_COLOR, Note.Companion.Entry.COLUMN_NAME_TIME)
-        val sortOrder = "${Note.Companion.Entry.COLUMN_NAME_TIME} DESC"
         val cursor = db.query(
             Note.Companion.Entry.TABLE_NAME,
-            projection,
+            arrayOf(
+                BaseColumns._ID,
+                Note.Companion.Entry.COLUMN_NAME_TITLE,
+                Note.Companion.Entry.COLUMN_NAME_VALUE,
+                Note.Companion.Entry.COLUMN_NAME_COLOR,
+                Note.Companion.Entry.COLUMN_NAME_TIME
+            ),
             null,
             null,
             null,
             null,
-            sortOrder
+            "${Note.Companion.Entry.COLUMN_NAME_TIME} DESC"
         )
         val notes = mutableListOf<Note>()
         with(cursor) {
             while (moveToNext()) {
-                val title = getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_TITLE))
-                val value = getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_VALUE))
-                val color = getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_COLOR)).toInt()
-                val time = getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_TIME)).toLong()
-                notes.add(Note(title, value, color, time))
+                notes.add(
+                    Note(
+                        getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_TITLE)),
+                        getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_VALUE)),
+                        getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_COLOR)).toInt(),
+                        getString(getColumnIndexOrThrow(Note.Companion.Entry.COLUMN_NAME_TIME)).toLong()
+                    )
+                )
             }
         }
         cursor.close()
