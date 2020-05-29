@@ -66,6 +66,11 @@ Windows:
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
+
+## Translating
+
+Visit [Crowdin Project page](https://crowdin.com/project/meargraurnotes) if you want to help translating the app :)
+
 ## Versioning
 
 We use simple major-only versioning in Japanese (OwO) (e.g. versionCode = 1, then version is ichi, versionCode = 2, then version is ni and etc.)
