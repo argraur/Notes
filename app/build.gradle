@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'org.jetbrains.dokka'
 
 android {
     compileSdkVersion 29
@@ -42,4 +43,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
     implementation 'com.google.android.material:material:1.2.0-alpha06'
+}
+
+dokka {
+    outputFormat = 'html'
+    outputDirectory = 'dokka'
 }

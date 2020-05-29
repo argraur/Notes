@@ -1,0 +1,10 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+me.argraur.notes
+me.argraur.notes.adapters
+me.argraur.notes.entities
+me.argraur.notes.helpers
+me.argraur.notes.interfaces
+me.argraur.notes.observers
+me.argraur.notes.screens
