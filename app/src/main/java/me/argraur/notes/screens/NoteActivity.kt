@@ -31,6 +31,11 @@ import me.argraur.notes.helpers.NoteManager
 import me.argraur.notes.screens.EditNoteActivity.Companion.IS_EDIT
 
 class NoteActivity : AppCompatActivity() {
+    /**
+     * Gets Note contents from intent extras
+     * And updates views according to those contents
+     * @see AppCompatActivity.onCreate
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note)
@@ -39,6 +44,12 @@ class NoteActivity : AppCompatActivity() {
         findViewById<MaterialCardView>(R.id.note_cardview).setCardBackgroundColor(intent.getIntExtra(NOTE_COLOR, 0))
     }
 
+    /**
+     * Called by edit button.
+     * Starts EditNoteActivity with IS_EDIT set to true
+     * And passes all contents of the Note object
+     * @param view Button's view
+     */
     fun edit(@Suppress("UNUSED_PARAMETER") view: View) {
         startActivity(Intent(this, EditNoteActivity::class.java).apply {
             putExtra(NOTE_TITLE, intent.getStringExtra(NOTE_TITLE))
@@ -50,10 +61,20 @@ class NoteActivity : AppCompatActivity() {
         finish()
     }
 
+    /**
+     * Called by delete button.
+     * Deletes note using NOTE_TIME intent extra
+     * @param view Button's view
+     */
     fun delete(@Suppress("UNUSED_PARAMETER") view: View) {
         NoteManager.getInstance(null).deleteNote(intent.getLongExtra(NOTE_TIME, 0))
         finish()
     }
 
+    /**
+     * Called by back floating action button
+     * Finishes NoteActivity lifecycle
+     * @param view View where button lays
+     */
     fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
 }

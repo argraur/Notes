@@ -19,6 +19,9 @@ package me.argraur.notes
 import android.app.Application
 import me.argraur.notes.helpers.NoteManager
 
+/**
+ * Creates NoteManager instance
+ */
 @Suppress("Unused")
 class App: Application() {
     override fun onCreate() {

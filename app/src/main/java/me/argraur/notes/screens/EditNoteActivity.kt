@@ -42,6 +42,9 @@ class EditNoteActivity : AppCompatActivity() {
         const val IS_EDIT = "me.argraur.notes.IS_EDIT"
     }
 
+    /**
+     * @see AppCompatActivity.onCreate
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
@@ -68,13 +71,30 @@ class EditNoteActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Creates note object based on params
+     * Saves it into database
+     * And finishes EditNoteActivity
+     * @param title Note's title
+     * @param value Note's content
+     * @param color Note's color in int format
+     */
     private fun save(title: String, value: String, color: Int) {
         noteMgr.putNote(Note(title, value, color))
         finish()
     }
 
+    /**
+     * Deletes note by given creation time
+     * @param time Note identifier
+     */
     private fun delete(time: Long) = noteMgr.deleteNote(time)
 
+    /**
+     * Checks if title is empty and
+     * Adds error to textInputLayout if title is empty
+     * @return Whether title is empty or not (false, true)
+     */
     private fun checkTitle(): Boolean {
         return if (titleInput.text.toString().isEmpty()) {
             textInputLayout.error = "Title can't be empty!"
@@ -82,6 +102,11 @@ class EditNoteActivity : AppCompatActivity() {
         } else true
     }
 
+    /**
+     * Called by color FABs
+     * Sets note color and sets check-mark drawable on button
+     * @param view View where button lays
+     */
     fun setColor(view: View) {
         resetImages()
         view as FloatingActionButton
@@ -89,11 +114,19 @@ class EditNoteActivity : AppCompatActivity() {
         view.setImageDrawable(getDrawable(R.drawable.ic_outline_done))
     }
 
+    /**
+     * Removes check-mark drawable from all color FABs
+     */
     private fun resetImages() {
         findViewById<FloatingActionButton>(R.id.color1).setImageDrawable(null)
         findViewById<FloatingActionButton>(R.id.color2).setImageDrawable(null)
         findViewById<FloatingActionButton>(R.id.color3).setImageDrawable(null)
     }
 
+    /**
+     * Called by back floating action button
+     * Finishes EditNoteActivity lifecycle
+     * @param view View where button lays
+     */
     fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
 }

@@ -30,10 +30,17 @@ import me.argraur.notes.helpers.NoteManager
 import me.argraur.notes.observers.NoteObserver
 import me.argraur.notes.screens.EditNoteActivity
 
+/**
+ * MainActivity. Shows previews for already saved notes
+ */
 class MainActivity : AppCompatActivity(), NoteObserver {
     private lateinit var nothingTextView: TextView
     private lateinit var notesView: RecyclerView
 
+    /**
+     * Creates Notes view and defines addNote fab action
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,6 +52,11 @@ class MainActivity : AppCompatActivity(), NoteObserver {
         }
     }
 
+    /**
+     * Called when mNotes of NoteManager was changed
+     * Creates and updates RecyclerView
+     * @see NoteObserver
+     */
     override fun onNotesChanged(mNotes: Array<Note>?) {
         nothingTextView.visibility = View.GONE
         notesView.visibility = View.GONE
@@ -60,5 +72,10 @@ class MainActivity : AppCompatActivity(), NoteObserver {
         }
     }
 
+    /**
+     * Called by back floating action button
+     * Finishes MainActivity lifecycle
+     * @param view View where button lays
+     */
     fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
 }

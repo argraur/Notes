@@ -24,13 +24,23 @@ import me.argraur.notes.entities.Note
 import me.argraur.notes.interfaces.Subject
 import me.argraur.notes.observers.NoteObserver
 
+/**
+ * Manages Notes and NoteObservers
+ * @constructor Creates empty NoteManager object, updates notes and notifies observers
+ */
 class NoteManager(context: Context): Subject {
     private val dbHelper = DatabaseHelper(context)
     private val mObservers = ArrayList<NoteObserver>()
     private var mNotes: Array<Note>? = null
 
     companion object {
+        // Static instance of NoteManager
         private var INSTANCE: NoteManager? = null
+
+        /**
+         * Creates one and only instance of NoteManager
+         * @param context Application context. Can be null if not called from me.argraur.notes.App
+         */
         fun getInstance(context: Context?): NoteManager {
             if (INSTANCE == null) {
                 if (context != null)
@@ -46,6 +56,11 @@ class NoteManager(context: Context): Subject {
         getNotes()
     }
 
+    /**
+     * Adds note into database, updates notes and notifies observers
+     * @param note Note that should be registered
+     * @return If action is successful, return true otherwise false
+     */
     fun putNote(note: Note): Boolean {
         return try {
             val db = dbHelper.writableDatabase
@@ -64,6 +79,11 @@ class NoteManager(context: Context): Subject {
         }
     }
 
+    /**
+     * Retrieves all notes from database
+     * Creates array of Note types based on title, value, color and creation time
+     * If current notes array doesn't match new one, update current and notify observers
+     */
     private fun getNotes() {
         val db = dbHelper.readableDatabase
         val cursor = db.query(
@@ -103,6 +123,11 @@ class NoteManager(context: Context): Subject {
         }
     }
 
+    /**
+     * Deletes note by given time
+     * @param time One and only unique identifier of note
+     * @return If action is successful, return true otherwise false
+     */
     fun deleteNote(time: Long): Boolean {
         return try {
             val db = dbHelper.writableDatabase
@@ -115,6 +140,9 @@ class NoteManager(context: Context): Subject {
         }
     }
 
+    /**
+     * @see Subject.registerObserver
+     */
     override fun registerObserver(observer: NoteObserver) {
         if (!mObservers.contains(observer)) {
             mObservers.add(observer)
@@ -122,12 +150,18 @@ class NoteManager(context: Context): Subject {
         }
     }
 
+    /**
+     * @see Subject.removeObserver
+     */
     override fun removeObserver(observer: NoteObserver) {
         if (mObservers.contains(observer)) {
             mObservers.remove(observer)
         }
     }
 
+    /**
+     * @see Subject.notifyObserver
+     */
     override fun notifyObserver() {
         for (observer in mObservers) {
             observer.onNotesChanged(mNotes)
