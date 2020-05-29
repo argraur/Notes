@@ -16,6 +16,7 @@
 
 package me.argraur.notes
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -42,13 +43,14 @@ class MainActivity : AppCompatActivity(), NoteObserver {
      * @param savedInstanceState
      */
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.allowEnterTransitionOverlap = true
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        nothingTextView = findViewById<TextView>(R.id.nothingTextView)
-        notesView = findViewById<RecyclerView>(R.id.notesView)
+        nothingTextView = findViewById(R.id.nothingTextView)
+        notesView = findViewById(R.id.notesView)
         NoteManager.getInstance(null).registerObserver(this)
         findViewById<FloatingActionButton>(R.id.addNote).setOnClickListener {
-            startActivity(Intent(this, EditNoteActivity::class.java))
+            startActivity(Intent(this, EditNoteActivity::class.java), ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
     }
 
@@ -77,5 +79,5 @@ class MainActivity : AppCompatActivity(), NoteObserver {
      * Finishes MainActivity lifecycle
      * @param view View where button lays
      */
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) = super.onBackPressed()
 }

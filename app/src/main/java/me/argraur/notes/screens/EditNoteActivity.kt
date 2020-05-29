@@ -46,6 +46,7 @@ class EditNoteActivity : AppCompatActivity() {
      * @see AppCompatActivity.onCreate
      */
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.allowEnterTransitionOverlap = true
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
         titleInput = findViewById(R.id.title_input)
@@ -81,7 +82,7 @@ class EditNoteActivity : AppCompatActivity() {
      */
     private fun save(title: String, value: String, color: Int) {
         noteMgr.putNote(Note(title, value, color))
-        finish()
+        super.onBackPressed()
     }
 
     /**
@@ -128,5 +129,5 @@ class EditNoteActivity : AppCompatActivity() {
      * Finishes EditNoteActivity lifecycle
      * @param view View where button lays
      */
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) = super.onBackPressed()
 }

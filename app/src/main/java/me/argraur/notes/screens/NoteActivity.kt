@@ -37,6 +37,7 @@ class NoteActivity : AppCompatActivity() {
      * @see AppCompatActivity.onCreate
      */
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.allowEnterTransitionOverlap = true
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note)
         findViewById<TextView>(R.id.title_view).text = intent.getStringExtra(NOTE_TITLE)
@@ -68,6 +69,11 @@ class NoteActivity : AppCompatActivity() {
      */
     fun delete(@Suppress("UNUSED_PARAMETER") view: View) {
         NoteManager.getInstance(null).deleteNote(intent.getLongExtra(NOTE_TIME, 0))
+        super.onBackPressed()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
         finish()
     }
 
@@ -76,5 +82,5 @@ class NoteActivity : AppCompatActivity() {
      * Finishes NoteActivity lifecycle
      * @param view View where button lays
      */
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) = super.onBackPressed()
 }

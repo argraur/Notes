@@ -17,6 +17,7 @@
 package me.argraur.notes.adapters
 
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -74,7 +75,7 @@ class NotesAdapter(private val notes: Array<Note>, private val activity: Activit
                 putExtra(NOTE_VALUE, value)
                 putExtra(NOTE_TIME, time)
                 putExtra(NOTE_COLOR, color)
-            })
+            }, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
         }
     }
 
