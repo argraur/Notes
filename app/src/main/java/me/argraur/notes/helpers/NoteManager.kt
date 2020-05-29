@@ -16,9 +16,13 @@
 
 package me.argraur.notes.helpers
 
+import android.app.backup.BackupAgent
+import android.app.backup.BackupDataInput
+import android.app.backup.BackupDataOutput
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteException
+import android.os.ParcelFileDescriptor
 import android.provider.BaseColumns
 import me.argraur.notes.entities.Note
 import me.argraur.notes.interfaces.Subject
@@ -84,7 +88,7 @@ class NoteManager(context: Context): Subject {
      * Creates array of Note types based on title, value, color and creation time
      * If current notes array doesn't match new one, update current and notify observers
      */
-    private fun getNotes() {
+     fun getNotes() {
         val db = dbHelper.readableDatabase
         val cursor = db.query(
             Note.Companion.Entry.TABLE_NAME,

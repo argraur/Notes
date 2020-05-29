@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BackupAgent - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">me.argraur.notes.helpers</a>&nbsp;/&nbsp;<a href="./index.html">BackupAgent</a><br/>
+<br/>
+<h1>BackupAgent</h1>
+<code><span class="keyword">class </span><span class="identifier">BackupAgent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/backup/BackupAgent.html"><span class="identifier">BackupAgent</span></a></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">BackupAgent</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="on-backup.html">onBackup</a></h4>
+</td>
+<td>
+<p>Send log message when backup started</p>
+<code><span class="keyword">fun </span><span class="identifier">onBackup</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.BackupAgent$onBackup(android.os.ParcelFileDescriptor, android.app.backup.BackupDataOutput, android.os.ParcelFileDescriptor)/oldState">oldState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/ParcelFileDescriptor.html"><span class="identifier">ParcelFileDescriptor</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.BackupAgent$onBackup(android.os.ParcelFileDescriptor, android.app.backup.BackupDataOutput, android.os.ParcelFileDescriptor)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/backup/BackupDataOutput.html"><span class="identifier">BackupDataOutput</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.BackupAgent$onBackup(android.os.ParcelFileDescriptor, android.app.backup.BackupDataOutput, android.os.ParcelFileDescriptor)/newState">newState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/ParcelFileDescriptor.html"><span class="identifier">ParcelFileDescriptor</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-restore.html">onRestore</a></h4>
+</td>
+<td>
+<p>Send log message when restore finished</p>
+<code><span class="keyword">fun </span><span class="identifier">onRestore</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.BackupAgent$onRestore(android.app.backup.BackupDataInput, kotlin.Int, android.os.ParcelFileDescriptor)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/backup/BackupDataInput.html"><span class="identifier">BackupDataInput</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.BackupAgent$onRestore(android.app.backup.BackupDataInput, kotlin.Int, android.os.ParcelFileDescriptor)/appVersionCode">appVersionCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.BackupAgent$onRestore(android.app.backup.BackupDataInput, kotlin.Int, android.os.ParcelFileDescriptor)/newState">newState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/ParcelFileDescriptor.html"><span class="identifier">ParcelFileDescriptor</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-restore-finished.html">onRestoreFinished</a></h4>
+</td>
+<td>
+<p>Updates notes when restore finished.</p>
+<code><span class="keyword">fun </span><span class="identifier">onRestoreFinished</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
