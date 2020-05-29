@@ -1,6 +1,8 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 ![Android CI](https://github.com/argraur/Notes/workflows/Android%20CI/badge.svg)
 
+
+![Logo](https://github.com/argraur/Notes/raw/master/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png)
 # Notes
 
 A simple Material Design Notes app!
