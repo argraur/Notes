@@ -60,7 +60,5 @@ class MainActivity : AppCompatActivity(), NoteObserver {
         }
     }
 
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) {
-        finish()
-    }
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
 }

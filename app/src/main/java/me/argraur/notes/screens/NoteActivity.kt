@@ -28,6 +28,7 @@ import me.argraur.notes.adapters.NOTE_TIME
 import me.argraur.notes.adapters.NOTE_TITLE
 import me.argraur.notes.adapters.NOTE_VALUE
 import me.argraur.notes.helpers.NoteManager
+import me.argraur.notes.screens.EditNoteActivity.Companion.IS_EDIT
 
 class NoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,25 +40,20 @@ class NoteActivity : AppCompatActivity() {
     }
 
     fun edit(@Suppress("UNUSED_PARAMETER") view: View) {
-        val title = intent.getStringExtra(NOTE_TITLE)
-        val value = intent.getStringExtra(NOTE_VALUE)
-        val time = intent.getLongExtra(NOTE_TIME, 0L)
         startActivity(Intent(this, EditNoteActivity::class.java).apply {
-            putExtra(NOTE_TITLE, title)
-            putExtra(NOTE_VALUE, value)
-            putExtra(NOTE_TIME, time)
-            putExtra("me.argraur.notes.IS_EDIT", true)
+            putExtra(NOTE_TITLE, intent.getStringExtra(NOTE_TITLE))
+            putExtra(NOTE_VALUE, intent.getStringExtra(NOTE_VALUE))
+            putExtra(NOTE_TIME, intent.getLongExtra(NOTE_TIME, 0L))
+            putExtra(NOTE_COLOR, intent.getIntExtra(NOTE_COLOR, 0))
+            putExtra(IS_EDIT, true)
         })
         finish()
     }
 
     fun delete(@Suppress("UNUSED_PARAMETER") view: View) {
-        val time = intent.getLongExtra(NOTE_TIME, 0)
-        NoteManager.getInstance(null).deleteNote(time)
+        NoteManager.getInstance(null).deleteNote(intent.getLongExtra(NOTE_TIME, 0))
         finish()
     }
 
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) {
-        finish()
-    }
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
 }

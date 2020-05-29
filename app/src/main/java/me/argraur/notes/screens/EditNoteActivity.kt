@@ -24,6 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import me.argraur.notes.R
+import me.argraur.notes.adapters.NOTE_COLOR
 import me.argraur.notes.adapters.NOTE_TIME
 import me.argraur.notes.adapters.NOTE_TITLE
 import me.argraur.notes.adapters.NOTE_VALUE
@@ -33,40 +34,52 @@ import me.argraur.notes.helpers.NoteManager
 class EditNoteActivity : AppCompatActivity() {
     private var color: Int? = null
     private var noteMgr = NoteManager.getInstance(null)
+    private lateinit var titleInput: TextInputEditText
+    private lateinit var valueInput: TextInputEditText
+    private lateinit var textInputLayout: TextInputLayout
+    private lateinit var saveNoteFab: FloatingActionButton
+    companion object {
+        const val IS_EDIT = "me.argraur.notes.IS_EDIT"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
+        titleInput = findViewById(R.id.title_input)
+        valueInput = findViewById(R.id.value_input)
+        textInputLayout = findViewById(R.id.textInputLayout)
+        saveNoteFab = findViewById(R.id.saveNote)
         color = getColor(R.color.colorNote0)
-        if (!intent.getBooleanExtra("me.argraur.notes.IS_EDIT", false)) {
-            findViewById<FloatingActionButton>(R.id.saveNote).setOnClickListener {
-                val title = findViewById<TextInputEditText>(R.id.title_input).text.toString()
-                val value = findViewById<TextInputEditText>(R.id.value_input).text.toString()
-                if (title == "") {
-                    findViewById<TextInputLayout>(R.id.textInputLayout).error = "Title can't be empty!"
-                    return@setOnClickListener
-                }
-                noteMgr.putNote(Note(title, value, color!!))
-                finish()
+        if (!intent.getBooleanExtra(IS_EDIT, false)) {
+            saveNoteFab.setOnClickListener {
+                if (!checkTitle()) return@setOnClickListener
+                save(titleInput.text.toString(), valueInput.text.toString(), color!!)
             }
         } else {
+            color = intent.getIntExtra(NOTE_COLOR, 0)
             findViewById<TextView>(R.id.new_note).setText(R.string.edit_note)
-            val titleInput = findViewById<TextInputEditText>(R.id.title_input)
-            val valueInput = findViewById<TextInputEditText>(R.id.value_input)
             titleInput.setText(intent.getStringExtra(NOTE_TITLE))
             valueInput.setText(intent.getStringExtra(NOTE_VALUE))
-            val time = intent.getLongExtra(NOTE_TIME, 0L)
-            findViewById<FloatingActionButton>(R.id.saveNote).setOnClickListener {
-                val title = titleInput.text.toString()
-                val value = valueInput.text.toString()
-                if (title == "") {
-                    findViewById<TextInputLayout>(R.id.textInputLayout).error = "Title can't be empty!"
-                    return@setOnClickListener
-                }
-                noteMgr.deleteNote(time)
-                noteMgr.putNote(Note(title, value, color!!))
-                finish()
+            saveNoteFab.setOnClickListener {
+                if (!checkTitle()) return@setOnClickListener
+                delete(intent.getLongExtra(NOTE_TIME, 0L))
+                save(titleInput.text.toString(), valueInput.text.toString(), color!!)
             }
         }
+    }
+
+    private fun save(title: String, value: String, color: Int) {
+        noteMgr.putNote(Note(title, value, color))
+        finish()
+    }
+
+    private fun delete(time: Long) = noteMgr.deleteNote(time)
+
+    private fun checkTitle(): Boolean {
+        return if (titleInput.text.toString().isEmpty()) {
+            textInputLayout.error = "Title can't be empty!"
+            false
+        } else true
     }
 
     fun setColor(view: View) {
@@ -82,7 +95,5 @@ class EditNoteActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.color3).setImageDrawable(null)
     }
 
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) {
-        finish()
-    }
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) = finish()
 }
