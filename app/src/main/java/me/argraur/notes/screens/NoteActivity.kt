@@ -27,7 +27,7 @@ import me.argraur.notes.adapters.NOTE_COLOR
 import me.argraur.notes.adapters.NOTE_TIME
 import me.argraur.notes.adapters.NOTE_TITLE
 import me.argraur.notes.adapters.NOTE_VALUE
-import me.argraur.notes.helpers.NoteHelper
+import me.argraur.notes.helpers.NoteManager
 
 class NoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class NoteActivity : AppCompatActivity() {
         findViewById<MaterialCardView>(R.id.note_cardview).setCardBackgroundColor(intent.getIntExtra(NOTE_COLOR, 0))
     }
 
-    fun edit(view: View) {
+    fun edit(@Suppress("UNUSED_PARAMETER") view: View) {
         val title = intent.getStringExtra(NOTE_TITLE)
         val value = intent.getStringExtra(NOTE_VALUE)
         val time = intent.getLongExtra(NOTE_TIME, 0L)
@@ -51,14 +51,13 @@ class NoteActivity : AppCompatActivity() {
         finish()
     }
 
-    fun delete(view: View) {
+    fun delete(@Suppress("UNUSED_PARAMETER") view: View) {
         val time = intent.getLongExtra(NOTE_TIME, 0)
-        val noteHelper = NoteHelper(this)
-        noteHelper.deleteNote(time)
+        NoteManager.getInstance(null).deleteNote(time)
         finish()
     }
 
-    fun back(view: View) {
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) {
         finish()
     }
 }

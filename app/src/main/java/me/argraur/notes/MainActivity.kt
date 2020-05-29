@@ -25,48 +25,42 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import me.argraur.notes.adapters.NotesAdapter
-import me.argraur.notes.helpers.NoteHelper
+import me.argraur.notes.entities.Note
+import me.argraur.notes.helpers.NoteManager
+import me.argraur.notes.observers.NoteObserver
 import me.argraur.notes.screens.EditNoteActivity
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var viewManager: RecyclerView.LayoutManager
+class MainActivity : AppCompatActivity(), NoteObserver {
+    private lateinit var nothingTextView: TextView
+    private lateinit var notesView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val newNoteFab = findViewById<FloatingActionButton>(R.id.addNote)
-        newNoteFab.setOnClickListener {
-            val newNoteIntent = Intent(this, EditNoteActivity::class.java)
-            startActivity(newNoteIntent)
+        nothingTextView = findViewById<TextView>(R.id.nothingTextView)
+        notesView = findViewById<RecyclerView>(R.id.notesView)
+        NoteManager.getInstance(null).registerObserver(this)
+        findViewById<FloatingActionButton>(R.id.addNote).setOnClickListener {
+            startActivity(Intent(this, EditNoteActivity::class.java))
         }
     }
 
-    private fun updateNotes() {
-        val nothingTextView = findViewById<TextView>(R.id.nothingTextView)
-        val notesView = findViewById<RecyclerView>(R.id.notesView)
+    override fun onNotesChanged(mNotes: Array<Note>?) {
         nothingTextView.visibility = View.GONE
         notesView.visibility = View.GONE
-        val noteHelper = NoteHelper(this)
-        viewManager = LinearLayoutManager(this)
-        val notes = noteHelper.getNotes()
-        if (notes == null) {
+        if (mNotes!!.isEmpty()) {
             nothingTextView.visibility = View.VISIBLE
         } else {
             notesView.visibility = View.VISIBLE
             findViewById<RecyclerView>(R.id.notesView).apply {
                 setHasFixedSize(true)
-                layoutManager = viewManager
-                adapter = NotesAdapter(notes, this@MainActivity)
+                layoutManager = LinearLayoutManager(this@MainActivity)
+                adapter = NotesAdapter(mNotes, this@MainActivity)
             }
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        updateNotes()
-    }
-
-    fun back(view: View) {
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) {
         finish()
     }
 }
