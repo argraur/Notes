@@ -9,6 +9,8 @@ A simple Material Design Notes app!
 
 [![Imgur](https://i.imgur.com/t5GITkRm.png)](https://i.imgur.com/t5GITkR.png) [![Imgur](https://i.imgur.com/yZX1u5qm.png)](https://i.imgur.com/yZX1u5q.png) [![Imgur](https://i.imgur.com/X0SKaYOm.png)](https://i.imgur.com/X0SKaYO.png)
 
+* Google Sans will be shown only on Pixel devices and on custom ROMs that have Google Sans properly defined in fonts.xml
+
 ## Info
 * Package name: `me.argraur.notes`
 * Current version code: `1`
