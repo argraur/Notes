@@ -18,6 +18,13 @@ package me.argraur.notes.observers
 
 import me.argraur.notes.entities.Note
 
+/**
+ * Standard observer interface for Notes
+ */
 interface NoteObserver {
+    /**
+     * Called on notes update
+     * @param mNotes Array of notes
+     */
     fun onNotesChanged(mNotes: Array<Note>?)
 }

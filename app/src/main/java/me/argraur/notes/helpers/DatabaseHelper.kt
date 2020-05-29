@@ -35,14 +35,23 @@ class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
         const val DATABASE_NAME = "notes.db"
     }
 
+    /**
+     * @see SQLiteOpenHelper.onCreate
+     */
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SQL_CREATE_ENTRIES)
     }
 
+    /**
+     * @see SQLiteOpenHelper.onUpgrade
+     */
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL(SQL_DELETE_ENTRIES)
     }
 
+    /**
+     * @see SQLiteOpenHelper.onDowngrade
+     */
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         onUpgrade(db, oldVersion, newVersion)
     }
