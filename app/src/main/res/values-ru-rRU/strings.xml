@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Notes</string>
-    <string name="nothing">Nothing here yet!</string>
-    <string name="title_input">Title</string>
-    <string name="value_input">Note</string>
-    <string name="new_note">New note</string>
-    <string name="edit_note">Edit note</string>
+    <string name="app_name">Заметки</string>
+    <string name="nothing">Здесь пока ничего нет!</string>
+    <string name="title_input">Название</string>
+    <string name="value_input">Заметка</string>
+    <string name="new_note">Новая заметка</string>
+    <string name="edit_note">Изменение</string>
 </resources>
