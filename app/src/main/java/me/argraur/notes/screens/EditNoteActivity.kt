@@ -28,11 +28,11 @@ import me.argraur.notes.adapters.NOTE_TIME
 import me.argraur.notes.adapters.NOTE_TITLE
 import me.argraur.notes.adapters.NOTE_VALUE
 import me.argraur.notes.entities.Note
-import me.argraur.notes.helpers.NoteHelper
+import me.argraur.notes.helpers.NoteManager
 
 class EditNoteActivity : AppCompatActivity() {
     private var color: Int? = null
-
+    private var noteMgr = NoteManager.getInstance(null)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
@@ -45,7 +45,7 @@ class EditNoteActivity : AppCompatActivity() {
                     findViewById<TextInputLayout>(R.id.textInputLayout).error = "Title can't be empty!"
                     return@setOnClickListener
                 }
-                NoteHelper(this).putNote(Note(title, value, color!!))
+                noteMgr.putNote(Note(title, value, color!!))
                 finish()
             }
         } else {
@@ -55,7 +55,6 @@ class EditNoteActivity : AppCompatActivity() {
             titleInput.setText(intent.getStringExtra(NOTE_TITLE))
             valueInput.setText(intent.getStringExtra(NOTE_VALUE))
             val time = intent.getLongExtra(NOTE_TIME, 0L)
-            val noteHelper = NoteHelper(this)
             findViewById<FloatingActionButton>(R.id.saveNote).setOnClickListener {
                 val title = titleInput.text.toString()
                 val value = valueInput.text.toString()
@@ -63,8 +62,8 @@ class EditNoteActivity : AppCompatActivity() {
                     findViewById<TextInputLayout>(R.id.textInputLayout).error = "Title can't be empty!"
                     return@setOnClickListener
                 }
-                noteHelper.deleteNote(time)
-                NoteHelper(this).putNote(Note(title, value, color!!))
+                noteMgr.deleteNote(time)
+                noteMgr.putNote(Note(title, value, color!!))
                 finish()
             }
         }
@@ -83,7 +82,7 @@ class EditNoteActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.color3).setImageDrawable(null)
     }
 
-    fun back(view: View) {
+    fun back(@Suppress("UNUSED_PARAMETER") view: View) {
         finish()
     }
 }

@@ -21,14 +21,29 @@ import android.content.Context
 import android.database.sqlite.SQLiteException
 import android.provider.BaseColumns
 import me.argraur.notes.entities.Note
+import me.argraur.notes.interfaces.Subject
+import me.argraur.notes.observers.NoteObserver
 
-class NoteHelper(context: Context) {
+class NoteManager(context: Context): Subject {
     private val dbHelper = DatabaseHelper(context)
+    private val mObservers = ArrayList<NoteObserver>()
+    private var mNotes: Array<Note>? = null
 
-    fun deleteAllNotes() {
-        val db = dbHelper.writableDatabase
-        db.delete(Note.Companion.Entry.TABLE_NAME, null, null)
-        db.close()
+    companion object {
+        private var INSTANCE: NoteManager? = null
+        fun getInstance(context: Context?): NoteManager {
+            if (INSTANCE == null) {
+                if (context != null)
+                    INSTANCE = NoteManager(context)
+                else
+                    throw NullPointerException("Should pass actual context!")
+            }
+            return INSTANCE!!
+        }
+    }
+
+    init {
+        getNotes()
     }
 
     fun putNote(note: Note): Boolean {
@@ -42,13 +57,14 @@ class NoteHelper(context: Context) {
             }
             db?.insert(Note.Companion.Entry.TABLE_NAME, null, values)
             db.close()
+            getNotes()
             true
         } catch (e: SQLiteException) {
             false
         }
     }
 
-    fun getNotes(): Array<Note>? {
+    private fun getNotes() {
         val db = dbHelper.readableDatabase
         val projection = arrayOf(BaseColumns._ID, Note.Companion.Entry.COLUMN_NAME_TITLE, Note.Companion.Entry.COLUMN_NAME_VALUE, Note.Companion.Entry.COLUMN_NAME_COLOR, Note.Companion.Entry.COLUMN_NAME_TIME)
         val sortOrder = "${Note.Companion.Entry.COLUMN_NAME_TIME} DESC"
@@ -73,22 +89,41 @@ class NoteHelper(context: Context) {
         }
         cursor.close()
         db.close()
-        return if (notes.size != 0) {
-            notes.toTypedArray()
-        } else {
-            null
+        val newNotes = notes.toTypedArray()
+        if (newNotes != mNotes) {
+            mNotes = newNotes
+            notifyObserver()
         }
     }
 
     fun deleteNote(time: Long): Boolean {
         return try {
             val db = dbHelper.writableDatabase
-            val selection = "${Note.Companion.Entry.COLUMN_NAME_TIME} LIKE ?"
-            val selectionArgs = arrayOf(time.toString())
-            db.delete(Note.Companion.Entry.TABLE_NAME, selection, selectionArgs)
+            db.delete(Note.Companion.Entry.TABLE_NAME, "${Note.Companion.Entry.COLUMN_NAME_TIME} LIKE ?", arrayOf(time.toString()))
+            db.close()
+            getNotes()
             true
         } catch (e: SQLiteException) {
             false
+        }
+    }
+
+    override fun registerObserver(observer: NoteObserver) {
+        if (!mObservers.contains(observer)) {
+            mObservers.add(observer)
+            notifyObserver()
+        }
+    }
+
+    override fun removeObserver(observer: NoteObserver) {
+        if (mObservers.contains(observer)) {
+            mObservers.remove(observer)
+        }
+    }
+
+    override fun notifyObserver() {
+        for (observer in mObservers) {
+            observer.onNotesChanged(mNotes)
         }
     }
 }
