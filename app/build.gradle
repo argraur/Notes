@@ -11,8 +11,8 @@ android {
         applicationId "me.argraur.notes"
         minSdkVersion 27
         targetSdkVersion 29
-        versionCode 1
-        versionName "ichi"
+        versionCode 2
+        versionName "ni"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
