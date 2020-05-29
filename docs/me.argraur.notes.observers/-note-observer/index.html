@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NoteObserver - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">me.argraur.notes.observers</a>&nbsp;/&nbsp;<a href="./index.html">NoteObserver</a><br/>
+<br/>
+<h1>NoteObserver</h1>
+<code><span class="keyword">interface </span><span class="identifier">NoteObserver</span></code>
+<p>Standard observer interface for Notes</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="on-notes-changed.html">onNotesChanged</a></h4>
+</td>
+<td>
+<p>Called on notes update</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onNotesChanged</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.observers.NoteObserver$onNotesChanged(kotlin.Array((me.argraur.notes.entities.Note)))/mNotes">mNotes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../me.argraur.notes/-main-activity/index.html">MainActivity</a></h4>
+</td>
+<td>
+<p>MainActivity. Shows previews for already saved notes</p>
+<code><span class="keyword">class </span><span class="identifier">MainActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">NoteObserver</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NotesAdapter - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">me.argraur.notes.adapters</a>&nbsp;/&nbsp;<a href="./index.html">NotesAdapter</a><br/>
+<br/>
+<h1>NotesAdapter</h1>
+<code><span class="keyword">class </span><span class="identifier">NotesAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Adapter</span><span class="symbol">&lt;</span><span class="identifier">NotesHolder</span><span class="symbol">&gt;</span></code>
+<p>RecyclerView adapter for notes</p>
+<h3>Parameters</h3>
+<p><a name="notes"></a>
+<code>notes</code> - Notes that should be added into view</p>
+<p><a name="activity"></a>
+<code>activity</code> - Activity where RecyclerView exists</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-notes-holder/index.html">NotesHolder</a></h4>
+</td>
+<td>
+<p>RecyclerView holder for notes's cards</p>
+<code><span class="keyword">class </span><span class="identifier">NotesHolder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ViewHolder</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>RecyclerView adapter for notes</p>
+<code><span class="identifier">NotesAdapter</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$<init>(kotlin.Array((me.argraur.notes.entities.Note)), android.app.Activity)/notes">notes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$<init>(kotlin.Array((me.argraur.notes.entities.Note)), android.app.Activity)/activity">activity</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Activity.html"><span class="identifier">Activity</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get-item-count.html">getItemCount</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getItemCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-bind-view-holder.html">onBindViewHolder</a></h4>
+</td>
+<td>
+<p>Adds data into cards based on given note's position</p>
+<code><span class="keyword">fun </span><span class="identifier">onBindViewHolder</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onBindViewHolder(me.argraur.notes.adapters.NotesAdapter.NotesHolder, kotlin.Int)/holder">holder</span><span class="symbol">:</span>&nbsp;<span class="identifier">NotesHolder</span><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onBindViewHolder(me.argraur.notes.adapters.NotesAdapter.NotesHolder, kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-create-view-holder.html">onCreateViewHolder</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onCreateViewHolder</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/parent">parent</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/ViewGroup.html"><span class="identifier">ViewGroup</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/viewType">viewType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NotesHolder</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
