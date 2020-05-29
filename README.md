@@ -60,9 +60,6 @@ Windows:
 * [Gradle](https://github.com/gradle/gradle) - Build automation tool
 * [Kotlin](https://kotlinlang.org/) - Official programming language for native Android apps
 * [Google Material Design Components](https://material.io/develop/android/docs/getting-started/) 
-* [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics) - Crash reporting solution for Android apps
-* [Firebase Performance Monitoring](https://firebase.google.com/docs/perf-mon) - Performance monitoring service for Android apps
-* [Google Play services](https://developer.android.com/distribute/play-services) - Access to Google APIs for Android apps
 
 ## Contributing
 
