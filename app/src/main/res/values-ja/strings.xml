@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ノート</string>
-    <string name="nothing">ここにはまだ何もあない！</string>
+    <string name="nothing">ここにはまだ何もない！</string>
     <string name="title_input">タイトル</string>
     <string name="value_input">ノート</string>
     <string name="new_note">新しいノート</string>
