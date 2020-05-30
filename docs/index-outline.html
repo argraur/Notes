@@ -2,7 +2,7 @@
 <HEAD>
 <meta charset="UTF-8">
 <title>Module Contents</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 </HEAD>
 <BODY>
 <a href="dokka\app\index"><a href="./index"><span class="identifier">app</span></a></a><br/>
@@ -23,6 +23,23 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/index.html"><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Action</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-a-d-d.html"><span class="identifier">ADD</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-d-e-l-e-t-e.html"><span class="identifier">DELETE</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-n-o-t-h-i-n-g.html"><span class="identifier">NOTHING</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-s-h-o-w.html"><span class="identifier">SHOW</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-u-n-d-o_-d-e-l-e-t-e.html"><span class="identifier">UNDO_DELETE</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
 <a href="dokka\app\index"><a href="me.argraur.notes/-app/index.html"><span class="keyword">class </span><span class="identifier">App</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Application.html"><span class="identifier">Application</span></a></a></a><br/>
 <ul>
 <HTML>
@@ -100,7 +117,6 @@
 </HEAD>
 <BODY>
 <a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/-init-.html"><span class="identifier">MainActivity</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/back.html"><span class="keyword">fun </span><span class="identifier">back</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.MainActivity$back(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/on-create.html"><span class="keyword">protected</span> <span class="keyword">fun </span><span class="identifier">onCreate</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.MainActivity$onCreate(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/on-notes-changed.html"><span class="keyword">fun </span><span class="identifier">onNotesChanged</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.MainActivity$onNotesChanged(kotlin.Array((me.argraur.notes.entities.Note)))/mNotes">mNotes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
@@ -146,6 +162,55 @@
 </BODY>
 </HTML>
 </ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/index.html"><span class="keyword">class </span><span class="identifier">NoteActionManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.interfaces/-note-action-observer-manager/index.html"><span class="identifier">NoteActionObserverManager</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/-init-.html"><span class="identifier">NoteActionManager</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/call.html"><span class="keyword">fun </span><span class="identifier">call</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$call(me.argraur.notes.enums.Action, me.argraur.notes.entities.Note)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$call(me.argraur.notes.enums.Action, me.argraur.notes.entities.Note)/actionOn">actionOn</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/call-on-current.html"><span class="keyword">fun </span><span class="identifier">callOnCurrent</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$callOnCurrent(me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/current.html"><span class="keyword">fun </span><span class="identifier">current</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/current-action.html"><span class="keyword">fun </span><span class="identifier">currentAction</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/get-instance.html"><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.helpers/-note-action-manager/index.html"><span class="identifier">NoteActionManager</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/notify-observer.html"><span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/register-observer.html"><span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$registerObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/remove-observer.html"><span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$removeObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="keyword">interface </span><span class="identifier">NoteActionObserver</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.observers/-note-action-observer/on-action.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onAction</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.observers.NoteActionObserver$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/note">note</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.observers.NoteActionObserver$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/index.html"><span class="keyword">interface </span><span class="identifier">NoteActionObserverManager</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/notify-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/register-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteActionObserverManager$registerObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/remove-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteActionObserverManager$removeObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/index.html"><span class="keyword">class </span><span class="identifier">NoteActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span></a></a><br/>
 <ul>
 <HTML>
@@ -160,10 +225,11 @@
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/delete.html"><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.screens.NoteActivity$delete(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/edit.html"><span class="keyword">fun </span><span class="identifier">edit</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.screens.NoteActivity$edit(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/on-create.html"><span class="keyword">protected</span> <span class="keyword">fun </span><span class="identifier">onCreate</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.screens.NoteActivity$onCreate(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/on-restart.html"><span class="keyword">protected</span> <span class="keyword">fun </span><span class="identifier">onRestart</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
 </ul>
-<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/index.html"><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.interfaces/-subject/index.html"><span class="identifier">Subject</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/index.html"><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.interfaces/-note-observer-manager/index.html"><span class="identifier">NoteObserverManager</span></a><span class="symbol">, </span><a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a></a></a><br/>
 <ul>
 <HTML>
 <HEAD>
@@ -173,11 +239,10 @@
 </HEAD>
 <BODY>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/-init-.html"><span class="identifier">NoteManager</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/delete-note.html"><span class="keyword">fun </span><span class="identifier">deleteNote</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$deleteNote(kotlin.Long)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/get-instance.html"><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager.Companion$getInstance(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.helpers/-note-manager/index.html"><span class="identifier">NoteManager</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/get-notes.html"><span class="keyword">fun </span><span class="identifier">getNotes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/notify-observer.html"><span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/put-note.html"><span class="keyword">fun </span><span class="identifier">putNote</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$putNote(me.argraur.notes.entities.Note)/note">note</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/on-action.html"><span class="keyword">fun </span><span class="identifier">onAction</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/note">note</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/register-observer.html"><span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$registerObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/remove-observer.html"><span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$removeObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
@@ -193,6 +258,21 @@
 </HEAD>
 <BODY>
 <a href="dokka\app\index"><a href="me.argraur.notes.observers/-note-observer/on-notes-changed.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onNotesChanged</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.observers.NoteObserver$onNotesChanged(kotlin.Array((me.argraur.notes.entities.Note)))/mNotes">mNotes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/index.html"><span class="keyword">interface </span><span class="identifier">NoteObserverManager</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/notify-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/register-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteObserverManager$registerObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/remove-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteObserverManager$removeObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
 </ul>
@@ -223,21 +303,6 @@
 </ul>
 <a href="dokka\app\index"><a href="me.argraur.notes.adapters/-notes-adapter/on-bind-view-holder.html"><span class="keyword">fun </span><span class="identifier">onBindViewHolder</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onBindViewHolder(me.argraur.notes.adapters.NotesAdapter.NotesHolder, kotlin.Int)/holder">holder</span><span class="symbol">:</span>&nbsp;<span class="identifier">NotesHolder</span><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onBindViewHolder(me.argraur.notes.adapters.NotesAdapter.NotesHolder, kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.adapters/-notes-adapter/on-create-view-holder.html"><span class="keyword">fun </span><span class="identifier">onCreateViewHolder</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/parent">parent</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/ViewGroup.html"><span class="identifier">ViewGroup</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.adapters.NotesAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/viewType">viewType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NotesHolder</span></a></a><br/>
-</BODY>
-</HTML>
-</ul>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/index.html"><span class="keyword">interface </span><span class="identifier">Subject</span></a></a><br/>
-<ul>
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>Module Contents</title>
-<link rel="stylesheet" href="../style.css">
-</HEAD>
-<BODY>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/notify-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/register-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.Subject$registerObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/remove-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.Subject$removeObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
 </ul>
@@ -277,7 +342,6 @@
 </HEAD>
 <BODY>
 <a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/-init-.html"><span class="identifier">MainActivity</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/back.html"><span class="keyword">fun </span><span class="identifier">back</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.MainActivity$back(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/on-create.html"><span class="keyword">protected</span> <span class="keyword">fun </span><span class="identifier">onCreate</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.MainActivity$onCreate(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes/-main-activity/on-notes-changed.html"><span class="keyword">fun </span><span class="identifier">onNotesChanged</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.MainActivity$onNotesChanged(kotlin.Array((me.argraur.notes.entities.Note)))/mNotes">mNotes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
@@ -295,10 +359,6 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
-<a href="dokka\app\index"><a href="me.argraur.notes.adapters/-n-o-t-e_-c-o-l-o-r.html"><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">NOTE_COLOR</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.adapters/-n-o-t-e_-t-i-m-e.html"><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">NOTE_TIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.adapters/-n-o-t-e_-t-i-t-l-e.html"><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">NOTE_TITLE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.adapters/-n-o-t-e_-v-a-l-u-e.html"><span class="keyword">const</span> <span class="keyword">val </span><span class="identifier">NOTE_VALUE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.adapters/-notes-adapter/index.html"><span class="keyword">class </span><span class="identifier">NotesAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Adapter</span><span class="symbol">&lt;</span><span class="identifier">NotesHolder</span><span class="symbol">&gt;</span></a></a><br/>
 <ul>
 <HTML>
@@ -384,6 +444,35 @@
 </BODY>
 </HTML>
 </ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/index.html"><span class="keyword">package</span>&nbsp;<span class="identifier">me.argraur.notes.enums</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/index.html"><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Action</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-a-d-d.html"><span class="identifier">ADD</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-d-e-l-e-t-e.html"><span class="identifier">DELETE</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-n-o-t-h-i-n-g.html"><span class="identifier">NOTHING</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-s-h-o-w.html"><span class="identifier">SHOW</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.enums/-action/-u-n-d-o_-d-e-l-e-t-e.html"><span class="identifier">UNDO_DELETE</span></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+</BODY>
+</HTML>
+</ul>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/index.html"><span class="keyword">package</span>&nbsp;<span class="identifier">me.argraur.notes.helpers</span></a></a><br/>
 <ul>
 <HTML>
@@ -429,7 +518,28 @@
 </BODY>
 </HTML>
 </ul>
-<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/index.html"><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.interfaces/-subject/index.html"><span class="identifier">Subject</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/index.html"><span class="keyword">class </span><span class="identifier">NoteActionManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.interfaces/-note-action-observer-manager/index.html"><span class="identifier">NoteActionObserverManager</span></a></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/-init-.html"><span class="identifier">NoteActionManager</span><span class="symbol">(</span><span class="symbol">)</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/call.html"><span class="keyword">fun </span><span class="identifier">call</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$call(me.argraur.notes.enums.Action, me.argraur.notes.entities.Note)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$call(me.argraur.notes.enums.Action, me.argraur.notes.entities.Note)/actionOn">actionOn</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/call-on-current.html"><span class="keyword">fun </span><span class="identifier">callOnCurrent</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$callOnCurrent(me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/current.html"><span class="keyword">fun </span><span class="identifier">current</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/current-action.html"><span class="keyword">fun </span><span class="identifier">currentAction</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/get-instance.html"><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.helpers/-note-action-manager/index.html"><span class="identifier">NoteActionManager</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/notify-observer.html"><span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/register-observer.html"><span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$registerObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-action-manager/remove-observer.html"><span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$removeObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/index.html"><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.interfaces/-note-observer-manager/index.html"><span class="identifier">NoteObserverManager</span></a><span class="symbol">, </span><a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a></a></a><br/>
 <ul>
 <HTML>
 <HEAD>
@@ -439,11 +549,10 @@
 </HEAD>
 <BODY>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/-init-.html"><span class="identifier">NoteManager</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/delete-note.html"><span class="keyword">fun </span><span class="identifier">deleteNote</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$deleteNote(kotlin.Long)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/get-instance.html"><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager.Companion$getInstance(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="me.argraur.notes.helpers/-note-manager/index.html"><span class="identifier">NoteManager</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/get-notes.html"><span class="keyword">fun </span><span class="identifier">getNotes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/notify-observer.html"><span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/put-note.html"><span class="keyword">fun </span><span class="identifier">putNote</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$putNote(me.argraur.notes.entities.Note)/note">note</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/on-action.html"><span class="keyword">fun </span><span class="identifier">onAction</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/note">note</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/register-observer.html"><span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$registerObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.helpers/-note-manager/remove-observer.html"><span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$removeObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
@@ -461,7 +570,7 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/index.html"><span class="keyword">interface </span><span class="identifier">Subject</span></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/index.html"><span class="keyword">interface </span><span class="identifier">NoteActionObserverManager</span></a></a><br/>
 <ul>
 <HTML>
 <HEAD>
@@ -470,9 +579,24 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/notify-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/register-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.Subject$registerObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
-<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-subject/remove-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.Subject$removeObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/notify-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/register-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteActionObserverManager$registerObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-action-observer-manager/remove-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteActionObserverManager$removeObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/index.html"><span class="keyword">interface </span><span class="identifier">NoteObserverManager</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/notify-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/register-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteObserverManager$registerObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.interfaces/-note-observer-manager/remove-observer.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.interfaces.NoteObserverManager$removeObserver(me.argraur.notes.observers.NoteObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.observers/-note-observer/index.html"><span class="identifier">NoteObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
 </ul>
@@ -488,6 +612,19 @@
 <link rel="stylesheet" href="../style.css">
 </HEAD>
 <BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.observers/-note-action-observer/index.html"><span class="keyword">interface </span><span class="identifier">NoteActionObserver</span></a></a><br/>
+<ul>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module Contents</title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="dokka\app\index"><a href="me.argraur.notes.observers/-note-action-observer/on-action.html"><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onAction</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.observers.NoteActionObserver$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/note">note</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.observers.NoteActionObserver$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+</BODY>
+</HTML>
+</ul>
 <a href="dokka\app\index"><a href="me.argraur.notes.observers/-note-observer/index.html"><span class="keyword">interface </span><span class="identifier">NoteObserver</span></a></a><br/>
 <ul>
 <HTML>
@@ -544,6 +681,7 @@
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/delete.html"><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.screens.NoteActivity$delete(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/edit.html"><span class="keyword">fun </span><span class="identifier">edit</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.screens.NoteActivity$edit(android.view.View)/view">view</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 <a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/on-create.html"><span class="keyword">protected</span> <span class="keyword">fun </span><span class="identifier">onCreate</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.screens.NoteActivity$onCreate(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
+<a href="dokka\app\index"><a href="me.argraur.notes.screens/-note-activity/on-restart.html"><span class="keyword">protected</span> <span class="keyword">fun </span><span class="identifier">onRestart</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></a></a><br/>
 </BODY>
 </HTML>
 </ul>

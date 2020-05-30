@@ -14,28 +14,19 @@
  * limitations under the License.
  */
 
-package me.argraur.notes.interfaces
+package me.argraur.notes.observers
 
-import me.argraur.notes.observers.NoteObserver
+import me.argraur.notes.entities.Note
+import me.argraur.notes.enums.Action
 
 /**
- * Observer manager
+ * Observer interface for NoteActionManager
  */
-interface Subject {
+interface NoteActionObserver {
     /**
-     * Registers observer
-     * @param observer NoteObserver type to-be-registered
+     * Called when action request was created
+     * @param note Note we are doing action on
+     * @param action Actual Action type
      */
-    fun registerObserver(observer: NoteObserver)
-
-    /**
-     * Removes observer
-     * @param observer NoteObserver type to-be-removed
-     */
-    fun removeObserver(observer: NoteObserver)
-
-    /**
-     * Notifies all observers about update
-     */
-    fun notifyObserver()
+    fun onAction(note: Note, action: Action)
 }

@@ -8,7 +8,7 @@
 <a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">me.argraur.notes.helpers</a>&nbsp;/&nbsp;<a href="./index.html">NoteManager</a><br/>
 <br/>
 <h1>NoteManager</h1>
-<code><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.interfaces/-subject/index.html"><span class="identifier">Subject</span></a></code>
+<code><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.interfaces/-note-observer-manager/index.html"><span class="identifier">NoteObserverManager</span></a><span class="symbol">, </span><a href="../../me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a></code>
 <p>Manages Notes and NoteObservers</p>
 <h3>Constructors</h3>
 <table>
@@ -28,14 +28,6 @@
 <tbody>
 <tr>
 <td>
-<h4><a href="delete-note.html">deleteNote</a></h4>
-</td>
-<td>
-<p>Deletes note by given time</p>
-<code><span class="keyword">fun </span><span class="identifier">deleteNote</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$deleteNote(kotlin.Long)/time">time</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
-</tr>
-<tr>
-<td>
 <h4><a href="get-notes.html">getNotes</a></h4>
 </td>
 <td>
@@ -53,11 +45,11 @@ If current notes array doesn't match new one, update current and notify observer
 </tr>
 <tr>
 <td>
-<h4><a href="put-note.html">putNote</a></h4>
+<h4><a href="on-action.html">onAction</a></h4>
 </td>
 <td>
-<p>Adds note into database, updates notes and notifies observers</p>
-<code><span class="keyword">fun </span><span class="identifier">putNote</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$putNote(me.argraur.notes.entities.Note)/note">note</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+<p>Called when action request was created</p>
+<code><span class="keyword">fun </span><span class="identifier">onAction</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/note">note</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.NoteManager$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
 </tr>
 <tr>
 <td>

@@ -4,6 +4,7 @@ $dokka.linkExtension:html
 me.argraur.notes
 me.argraur.notes.adapters
 me.argraur.notes.entities
+me.argraur.notes.enums
 me.argraur.notes.helpers
 me.argraur.notes.interfaces
 me.argraur.notes.observers

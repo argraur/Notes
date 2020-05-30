@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NoteActionManager - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">me.argraur.notes.helpers</a>&nbsp;/&nbsp;<a href="./index.html">NoteActionManager</a><br/>
+<br/>
+<h1>NoteActionManager</h1>
+<code><span class="keyword">class </span><span class="identifier">NoteActionManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.interfaces/-note-action-observer-manager/index.html"><span class="identifier">NoteActionObserverManager</span></a></code>
+<p>This class parses some of actions that can be done with Notes
+Such as: ADD, REMOVE, SHOW</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>This class parses some of actions that can be done with Notes
+Such as: ADD, REMOVE, SHOW</p>
+<code><span class="identifier">NoteActionManager</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="call.html">call</a></h4>
+</td>
+<td>
+<p>Calls observers to process given action</p>
+<code><span class="keyword">fun </span><span class="identifier">call</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$call(me.argraur.notes.enums.Action, me.argraur.notes.entities.Note)/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$call(me.argraur.notes.enums.Action, me.argraur.notes.entities.Note)/actionOn">actionOn</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="call-on-current.html">callOnCurrent</a></h4>
+</td>
+<td>
+<p>Calls observers to process given action on current note (actionOn)</p>
+<code><span class="keyword">fun </span><span class="identifier">callOnCurrent</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$callOnCurrent(me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="current.html">current</a></h4>
+</td>
+<td>
+<p>Returns most recent note we worked with</p>
+<code><span class="keyword">fun </span><span class="identifier">current</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="current-action.html">currentAction</a></h4>
+</td>
+<td>
+<p>Returns most recent called action</p>
+<code><span class="keyword">fun </span><span class="identifier">currentAction</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="notify-observer.html">notifyObserver</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">notifyObserver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="register-observer.html">registerObserver</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">registerObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$registerObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="remove-observer.html">removeObserver</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">removeObserver</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.helpers.NoteActionManager$removeObserver(me.argraur.notes.observers.NoteActionObserver)/observer">observer</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.observers/-note-action-observer/index.html"><span class="identifier">NoteActionObserver</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get-instance.html">getInstance</a></h4>
+</td>
+<td>
+<p>Creates one and only instance of NoteActionManager</p>
+<code><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">NoteActionManager</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

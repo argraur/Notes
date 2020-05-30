@@ -31,12 +31,9 @@ import com.google.android.material.card.MaterialCardView
 
 import me.argraur.notes.R
 import me.argraur.notes.entities.Note
+import me.argraur.notes.enums.Action
+import me.argraur.notes.helpers.NoteActionManager
 import me.argraur.notes.screens.NoteActivity
-
-const val NOTE_TITLE = "me.argraur.notes.NOTE_TITLE"
-const val NOTE_VALUE = "me.argraur.notes.NOTE_VALUE"
-const val NOTE_TIME = "me.argraur.notes.NOTE_TIME"
-const val NOTE_COLOR = "me.argraur.notes.NOTE_COLOR"
 
 /**
  * RecyclerView adapter for notes
@@ -64,18 +61,12 @@ class NotesAdapter(private val notes: Array<Note>, private val activity: Activit
     override fun onBindViewHolder(holder: NotesHolder, position: Int) {
         val title = notes[position].getTitle()
         val value = notes[position].getValue()
-        val time = notes[position].getTime()
-        val color = notes[position].getColor()
         ((holder.cardView[0] as ConstraintLayout)[0] as TextView).text = title
         ((holder.cardView[0] as ConstraintLayout)[1] as TextView).text = value
         holder.cardView.setCardBackgroundColor(notes[position].getColor())
         holder.cardView.setOnClickListener {
-            activity.startActivity(Intent(activity, NoteActivity::class.java).apply {
-                putExtra(NOTE_TITLE, title)
-                putExtra(NOTE_VALUE, value)
-                putExtra(NOTE_TIME, time)
-                putExtra(NOTE_COLOR, color)
-            }, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
+            NoteActionManager.getInstance().call(Action.SHOW, notes[position])
+            activity.startActivity(Intent(activity, NoteActivity::class.java), ActivityOptions.makeSceneTransitionAnimation(activity).toBundle())
         }
     }
 

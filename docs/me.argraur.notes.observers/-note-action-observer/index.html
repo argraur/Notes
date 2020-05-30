@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NoteActionObserver - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">me.argraur.notes.observers</a>&nbsp;/&nbsp;<a href="./index.html">NoteActionObserver</a><br/>
+<br/>
+<h1>NoteActionObserver</h1>
+<code><span class="keyword">interface </span><span class="identifier">NoteActionObserver</span></code>
+<p>Observer interface for NoteActionManager</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="on-action.html">onAction</a></h4>
+</td>
+<td>
+<p>Called when action request was created</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onAction</span><span class="symbol">(</span><span class="identifier" id="me.argraur.notes.observers.NoteActionObserver$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/note">note</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.entities/-note/index.html"><span class="identifier">Note</span></a><span class="symbol">, </span><span class="identifier" id="me.argraur.notes.observers.NoteActionObserver$onAction(me.argraur.notes.entities.Note, me.argraur.notes.enums.Action)/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.enums/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="../../me.argraur.notes.helpers/-note-manager/index.html">NoteManager</a></h4>
+</td>
+<td>
+<p>Manages Notes and NoteObservers</p>
+<code><span class="keyword">class </span><span class="identifier">NoteManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../me.argraur.notes.interfaces/-note-observer-manager/index.html"><span class="identifier">NoteObserverManager</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">NoteActionObserver</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

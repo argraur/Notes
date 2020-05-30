@@ -25,8 +25,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import me.argraur.notes.adapters.NotesAdapter
 import me.argraur.notes.entities.Note
+import me.argraur.notes.enums.Action
+import me.argraur.notes.helpers.NoteActionManager
 import me.argraur.notes.helpers.NoteManager
 import me.argraur.notes.observers.NoteObserver
 import me.argraur.notes.screens.EditNoteActivity
@@ -37,6 +40,9 @@ import me.argraur.notes.screens.EditNoteActivity
 class MainActivity : AppCompatActivity(), NoteObserver {
     private lateinit var nothingTextView: TextView
     private lateinit var notesView: RecyclerView
+    private lateinit var fab: FloatingActionButton
+    private val noteManager = NoteManager.getInstance(null)
+    private val noteActionManager = NoteActionManager.getInstance()
 
     /**
      * Creates Notes view and defines addNote fab action
@@ -48,8 +54,9 @@ class MainActivity : AppCompatActivity(), NoteObserver {
         setContentView(R.layout.activity_main)
         nothingTextView = findViewById(R.id.nothingTextView)
         notesView = findViewById(R.id.notesView)
-        NoteManager.getInstance(null).registerObserver(this)
-        findViewById<FloatingActionButton>(R.id.addNote).setOnClickListener {
+        fab = findViewById(R.id.addNote)
+        noteManager.registerObserver(this)
+        fab.setOnClickListener {
             startActivity(Intent(this, EditNoteActivity::class.java), ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
     }
@@ -60,6 +67,15 @@ class MainActivity : AppCompatActivity(), NoteObserver {
      * @see NoteObserver
      */
     override fun onNotesChanged(mNotes: Array<Note>?) {
+        @Suppress("NON_EXHAUSTIVE_WHEN")
+        when (NoteActionManager.getInstance().currentAction()) {
+            Action.ADD -> Snackbar.make(findViewById(R.id.main_layout), getString(R.string.snackbar_add), Snackbar.LENGTH_SHORT).setBackgroundTint(getColor(R.color.snackBarBackground)).setTextColor(getColor(R.color.foreground)).setAnchorView(fab).show()
+            Action.UNDO_DELETE -> Snackbar.make(findViewById(R.id.main_layout), getString(R.string.snackbar_restore), Snackbar.LENGTH_SHORT).setBackgroundTint(getColor(R.color.snackBarBackground)).setTextColor(getColor(R.color.foreground)).setAnchorView(fab).show()
+            Action.DELETE -> Snackbar.make(findViewById(R.id.main_layout), getString(R.string.snackbar_delete), Snackbar.LENGTH_SHORT).setBackgroundTint(getColor(R.color.snackBarBackground)).setTextColor(getColor(R.color.foreground)).setAnchorView(fab)
+                .setAction(getString(R.string.snackbar_undo)) {
+                    noteActionManager.callOnCurrent(Action.UNDO_DELETE)
+                }.show()
+        }
         nothingTextView.visibility = View.GONE
         notesView.visibility = View.GONE
         if (mNotes!!.isEmpty()) {

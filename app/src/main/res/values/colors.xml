@@ -9,4 +9,5 @@
     <color name="colorNote1">#F28B82</color>
     <color name="colorNote2">#CCFF90</color>
     <color name="colorNote3">#CBF0F8</color>
+    <color name="snackBarBackground">#FFFFFF</color>
 </resources>

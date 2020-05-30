@@ -24,16 +24,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import me.argraur.notes.R
-import me.argraur.notes.adapters.NOTE_COLOR
-import me.argraur.notes.adapters.NOTE_TIME
-import me.argraur.notes.adapters.NOTE_TITLE
-import me.argraur.notes.adapters.NOTE_VALUE
 import me.argraur.notes.entities.Note
-import me.argraur.notes.helpers.NoteManager
+import me.argraur.notes.enums.Action
+import me.argraur.notes.helpers.NoteActionManager
 
 class EditNoteActivity : AppCompatActivity() {
     private var color: Int? = null
-    private var noteMgr = NoteManager.getInstance(null)
+    private var noteActionManager = NoteActionManager.getInstance()
     private lateinit var titleInput: TextInputEditText
     private lateinit var valueInput: TextInputEditText
     private lateinit var textInputLayout: TextInputLayout
@@ -60,13 +57,14 @@ class EditNoteActivity : AppCompatActivity() {
                 save(titleInput.text.toString(), valueInput.text.toString(), color!!)
             }
         } else {
-            color = intent.getIntExtra(NOTE_COLOR, 0)
+            val note = noteActionManager.current()
+            color = note.getColor()
             findViewById<TextView>(R.id.new_note).setText(R.string.edit_note)
-            titleInput.setText(intent.getStringExtra(NOTE_TITLE))
-            valueInput.setText(intent.getStringExtra(NOTE_VALUE))
+            titleInput.setText(note.getTitle())
+            valueInput.setText(note.getValue())
             saveNoteFab.setOnClickListener {
                 if (!checkTitle()) return@setOnClickListener
-                delete(intent.getLongExtra(NOTE_TIME, 0L))
+                delete(note)
                 save(titleInput.text.toString(), valueInput.text.toString(), color!!)
             }
         }
@@ -81,15 +79,15 @@ class EditNoteActivity : AppCompatActivity() {
      * @param color Note's color in int format
      */
     private fun save(title: String, value: String, color: Int) {
-        noteMgr.putNote(Note(title, value, color))
+        noteActionManager.call(Action.ADD, Note(title, value, color))
         super.onBackPressed()
     }
 
     /**
      * Deletes note by given creation time
-     * @param time Note identifier
+     * @param note A Note object ^_^
      */
-    private fun delete(time: Long) = noteMgr.deleteNote(time)
+    private fun delete(note: Note) = noteActionManager.call(Action.DELETE, note)
 
     /**
      * Checks if title is empty and

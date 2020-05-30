@@ -23,14 +23,14 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.card.MaterialCardView
 import me.argraur.notes.R
-import me.argraur.notes.adapters.NOTE_COLOR
-import me.argraur.notes.adapters.NOTE_TIME
-import me.argraur.notes.adapters.NOTE_TITLE
-import me.argraur.notes.adapters.NOTE_VALUE
-import me.argraur.notes.helpers.NoteManager
+import me.argraur.notes.enums.Action
+import me.argraur.notes.helpers.NoteActionManager
 import me.argraur.notes.screens.EditNoteActivity.Companion.IS_EDIT
 
 class NoteActivity : AppCompatActivity() {
+    private val noteActionManager = NoteActionManager.getInstance()
+    private val note = noteActionManager.current()
+
     /**
      * Gets Note contents from intent extras
      * And updates views according to those contents
@@ -40,9 +40,9 @@ class NoteActivity : AppCompatActivity() {
         window.allowEnterTransitionOverlap = true
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note)
-        findViewById<TextView>(R.id.title_view).text = intent.getStringExtra(NOTE_TITLE)
-        findViewById<TextView>(R.id.value_view).text = intent.getStringExtra(NOTE_VALUE)
-        findViewById<MaterialCardView>(R.id.note_cardview).setCardBackgroundColor(intent.getIntExtra(NOTE_COLOR, 0))
+        findViewById<TextView>(R.id.title_view).text = note.getTitle()
+        findViewById<TextView>(R.id.value_view).text = note.getValue()
+        findViewById<MaterialCardView>(R.id.note_cardview).setCardBackgroundColor(note.getColor())
     }
 
     /**
@@ -53,10 +53,6 @@ class NoteActivity : AppCompatActivity() {
      */
     fun edit(@Suppress("UNUSED_PARAMETER") view: View) {
         startActivity(Intent(this, EditNoteActivity::class.java).apply {
-            putExtra(NOTE_TITLE, intent.getStringExtra(NOTE_TITLE))
-            putExtra(NOTE_VALUE, intent.getStringExtra(NOTE_VALUE))
-            putExtra(NOTE_TIME, intent.getLongExtra(NOTE_TIME, 0L))
-            putExtra(NOTE_COLOR, intent.getIntExtra(NOTE_COLOR, 0))
             putExtra(IS_EDIT, true)
         })
         finish()
@@ -68,7 +64,7 @@ class NoteActivity : AppCompatActivity() {
      * @param view Button's view
      */
     fun delete(@Suppress("UNUSED_PARAMETER") view: View) {
-        NoteManager.getInstance(null).deleteNote(intent.getLongExtra(NOTE_TIME, 0))
+        noteActionManager.callOnCurrent(Action.DELETE)
         super.onBackPressed()
     }
 
