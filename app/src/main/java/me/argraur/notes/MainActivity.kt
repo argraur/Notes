@@ -73,11 +73,4 @@ class MainActivity : AppCompatActivity(), NoteObserver {
             }
         }
     }
-
-    /**
-     * Called by back floating action button
-     * Finishes MainActivity lifecycle
-     * @param view View where button lays
-     */
-    fun back(@Suppress("UNUSED_PARAMETER") view: View) = super.onBackPressed()
 }
