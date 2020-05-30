@@ -6,4 +6,8 @@
     <string name="value_input">ノート</string>
     <string name="new_note">新しいノート</string>
     <string name="edit_note">編集</string>
+    <string name="snackbar_add">Note added</string>
+    <string name="snackbar_delete">Note deleted</string>
+    <string name="snackbar_undo">Undo</string>
+    <string name="snackbar_restore">Note restored</string>
 </resources>
