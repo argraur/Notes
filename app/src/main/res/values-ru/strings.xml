@@ -6,8 +6,8 @@
     <string name="value_input">Заметка</string>
     <string name="new_note">Новая заметка</string>
     <string name="edit_note">Изменение</string>
-    <string name="snackbar_add">Note added</string>
-    <string name="snackbar_delete">Note deleted</string>
-    <string name="snackbar_undo">Undo</string>
-    <string name="snackbar_restore">Note restored</string>
+    <string name="snackbar_add">Заметка добавлена</string>
+    <string name="snackbar_delete">Заметка удалена</string>
+    <string name="snackbar_undo">Отменить</string>
+    <string name="snackbar_restore">Заметка восстановлена</string>
 </resources>
